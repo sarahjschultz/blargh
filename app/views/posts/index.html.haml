@@ -1,1 +1,5 @@
-%h1 This is placeholder text for the index page
+%h1 All Posts Ever Written
+- @posts.each do |post|
+  .post_wrapper
+    %h2.title= link_to post.title
+    %p.date= post.created_at.strftime("%B %d, %Y")
