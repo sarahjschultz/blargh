@@ -4,6 +4,7 @@
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title Blargh
     = stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track' => true
+    = stylesheet_link_tag 'application', 'http://fonts.googleapis.com/css?family=Raleway:400,700'
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
@@ -25,7 +26,7 @@
       %p.sign_in Admin Login
     #main_content
       #header
-        %p All Posts
+        %p Blargh
         .buttons
           %button.button= link_to "New Post", new_post_path
           %button.button Log Out
