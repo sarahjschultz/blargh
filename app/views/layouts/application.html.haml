@@ -3,8 +3,32 @@
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title Blargh
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
+    #sidebar
+      %ul
+        %li.category Website
+        %li= link_to "Blog", root_path
+        %li About
+      %ul
+        %li.category Social
+        %li
+          %a{:href => "https://twitter.com/sarahdashdashp"} Twitter
+        %li
+          %a{:href => "http://instagram.com/sarahdashdashp"} Instagram
+        %li
+          %a{:href => "https://github.com/sarahjschultz"} Github
+        %li
+          %a{:href => "mailto:sarahjschultz@gmail.com"} Email
+      %p.sign_in Admin Login
+    #main_content
+      #header
+        %p All Posts
+        .buttons
+          %button.button= link_to "New Post", new_post_path
+          %button.button Log Out
+    - flash.each do |name, msg|
+      = content_tag(:div, msg, class: "alert")
     = yield
